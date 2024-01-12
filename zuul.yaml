@@ -1,12 +1,13 @@
 - job:
     name: testjob1
     run: playbooks/testjob1.yaml
-
 - project:
     merge-mode: squash-merge
     check:
       jobs:
         - testjob1
+        - noop
     gate:
       jobs:
         - testjob1
+        - noop
